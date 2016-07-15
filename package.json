@@ -1,0 +1,27 @@
+{
+  "name": "vue-bulma-rating",
+  "version": "0.0.0",
+  "description": "Rating component is based on starability for Vue Bulma",
+  "main": "src/Rating.vue",
+  "devDependencies": {
+    "bulma": "0.1.0",
+    "vue": "1.0.26"
+  },
+  "scripts": {},
+  "repository": "git+https://github.com/vue-bulma/rating.git",
+  "keywords": [
+    "vue",
+    "bulma",
+    "vue-bulma",
+    "vue-bulma-component",
+    "vue-bulma-rating",
+    "starability",
+    "rating",
+    "rate"
+  ],
+  "author": "Fangdun Cai <cfddream@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "starability": "1.0.4-rc.1"
+  }
+}
