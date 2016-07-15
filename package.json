@@ -1,6 +1,6 @@
 {
   "name": "vue-bulma-rating",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Rating component is based on starability for Vue Bulma",
   "main": "src/Rating.vue",
   "devDependencies": {
