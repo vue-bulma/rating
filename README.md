@@ -1,6 +1,6 @@
 # Rating
 
-Rating component is based on [starability](http://lunarlogic.github.io/starability/) for Vue Bulma.
+Rating component is based on [starability.css](http://lunarlogic.github.io/starability/) for Vue Bulma.
 
 ## Installation
 
