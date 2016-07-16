@@ -3,7 +3,7 @@
     <legend v-if="legend">{{ legend }}</legend>
   <template v-for="item in items">
     <input type="radio" :id="uuid($index)" name="rating" :value="item.value" :checked="hasChecked($index)" @change="change($event)">
-    <label :for="uuid($index)" :title="item.title || ''">{{ item.label || '' }}</label>
+    <label class="touchable" :for="uuid($index)" :title="item.title || ''">{{ item.label || '' }}</label>
   </template>
   </fieldset>
 </template>
