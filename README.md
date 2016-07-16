@@ -12,7 +12,9 @@ $ npm install vue-bulma-rating
 
 ```vue
 <template>
-  <rating :items="items" legend="Default star rating:"></rating>
+  <form>
+    <rating :items="items" legend="Default star rating:"></rating>
+  </form>
 </template>
 
 <script>
