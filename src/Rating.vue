@@ -1,10 +1,10 @@
 <template>
   <fieldset :class="[`starability-${kind}`, 'rating']">
     <legend v-if="legend">{{ legend }}</legend>
-  <template v-for="item in items">
-    <input type="radio" :id="uuid($index)" name="rating" :value="item.value" :checked="hasChecked($index)" @change="change($event)">
-    <label class="touchable" :for="uuid($index)" :title="item.title || ''">{{ item.label || '' }}</label>
-  </template>
+    <template v-for="(item, index) in items">
+      <input type="radio" :id="uuid(index)" name="rating" :value="item.value" :checked="hasChecked(index)" @change="change($event)">
+      <label class="touchable" :for="uuid(index)" :title="item.title || ''">{{ item.label || '' }}</label>
+    </template>
   </fieldset>
 </template>
 
@@ -14,7 +14,7 @@ export default {
     legend: String,
     items: {
       type: Array,
-      default: () => []
+      default: () => ([])
     },
     value: {
       type: Number,
@@ -27,17 +27,24 @@ export default {
     }
   },
 
+  data () {
+    return {
+      selected: this.value
+    }
+  },
+
   methods: {
     uuid (index) {
       return `rating-${this._uid}-item-${index}`
     },
 
     hasChecked (index) {
-      return this.count - index === this.value
+      return this.count - index === this.selected
     },
 
     change (e) {
-      this.value = e.target.value >>> 0
+      this.selected = e.target.value >>> 0
+      this.$emit('change', this.selected)
     }
   },
 
@@ -95,11 +102,11 @@ $bg-image-root: '~starability/starability-images';
     height: $star-size;
     color: transparent;
     cursor: pointer;
-    background-image: url('#{$bg-image-root}/#{$bg-image-path}.png');
+    background-image: url('#{$image-directory-path}/#{$bg-image-path}.png');
     background-repeat: no-repeat;
 
     @media screen and (min-resolution: 192dpi) {
-      background-image: url('#{$bg-image-root}/#{$bg-image-path}@2x.png');
+      background-image: url('#{$image-directory-path}/#{$bg-image-path}@2x.png');
       background-size: $star-size auto;
     }
   }
@@ -111,11 +118,11 @@ $bg-image-root: '~starability/starability-images';
   content: ' ';
   width: $star-size;
   height:  $star-size;
-  background-image: url('#{$bg-image-root}/#{$bg-image-path}.png');
+  background-image: url('#{$image-directory-path}/#{$bg-image-path}.png');
   background-repeat: no-repeat;
 
   @media screen and (min-resolution: 192dpi) {
-    background-image: url('#{$bg-image-root}/#{$bg-image-path}@2x.png');
+    background-image: url('#{$image-directory-path}/#{$bg-image-path}@2x.png');
     background-size: $star-size auto;
   }
 }

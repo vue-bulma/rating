@@ -5,7 +5,7 @@ Rating component is based on [starability.css](http://lunarlogic.github.io/stara
 ## Installation
 
 ```
-$ npm install vue-bulma-rating
+$ npm install vue-bulma-rating --save
 ```
 
 ## Examples
@@ -13,8 +13,9 @@ $ npm install vue-bulma-rating
 ```vue
 <template>
   <form>
-    <rating :items="items" legend="Default star rating:"></rating>
+    <rating :items="items" legend="Default star rating:" :value="value" @change="update"></rating>
   </form>
+  {{ value }}
 </template>
 
 <script>
@@ -27,6 +28,7 @@ export default {
 
   data () {
     return {
+      value: 2,
       items: [
         {
           title: '5 Stars',
@@ -50,6 +52,12 @@ export default {
         }
       ]
     }
+  },
+
+  methods: {
+    update (val) {
+      this.value = val
+    }
   }
 }
 </script>
@@ -64,7 +72,6 @@ export default {
 
 ---
 
-> [fundon.me](https://fundun.me) &nbsp;&middot;&nbsp;
+> [fundon.me](https://fundon.me) &nbsp;&middot;&nbsp;
 > GitHub [@fundon](https://github.com/fundon) &nbsp;&middot;&nbsp;
 > Twitter [@_fundon](https://twitter.com/_fundon)
-
