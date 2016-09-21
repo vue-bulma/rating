@@ -61,7 +61,7 @@ export default {
 
 $accessible-highlight: false;
 
-$bg-image-root: '~starability/starability-images';
+$image-directory-path: '~starability/starability-images';
 
 @mixin starability-base($bg-image-path: 'icons') {
   display: block;
