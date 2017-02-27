@@ -4,11 +4,10 @@
   "description": "Rating component is based on starability for Vue Bulma",
   "main": "src/Rating.vue",
   "peerDependencies": {
-    "bulma": "^0.2",
-    "vue": ">=2.0.0-beta.0"
+    "bulma": ">=0.2",
+    "vue": ">=2"
   },
-  "scripts": {},
-  "repository": "git+https://github.com/vue-bulma/rating.git",
+  "repository": "vue-bulma/rating",
   "keywords": [
     "vue",
     "bulma",
